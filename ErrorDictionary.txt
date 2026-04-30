@@ -1,0 +1,1 @@
+T001 = Towers Current Price is lower than Buy Price 
