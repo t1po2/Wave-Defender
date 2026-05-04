@@ -3,12 +3,21 @@ package wavedefender.game;
 public class GameLoop implements Runnable{
 
 
+    private Game game;
+
+
     private boolean running; // am i running?
     private final double updateRate = 1.0d/60.d; // Rate: 60 updates per sec 
 
     private long nextStatTime;
     private int fps, ups;   // frames per sec ; updates per sec
 
+
+
+
+    public GameLoop(Game game){
+        this.game = game;
+    }
    
 
     @Override
@@ -50,15 +59,19 @@ public class GameLoop implements Runnable{
     }
 
 
+    private void update() {
+        game.update();
+        ups++;
+
+    }
+    
     private void render() {
+        game.render();
         fps++;
 
     }
 
-    private void update() {
-        ups++;
-
-    }
+   
     
     public void stop(){
         running = false;
