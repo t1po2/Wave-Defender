@@ -1,5 +1,5 @@
 package wavedefender.game;
-
+// helpful video: https://www.youtube.com/watch?v=LICU6zH8gVU
 public class GameLoop implements Runnable{
 
 
@@ -9,8 +9,8 @@ public class GameLoop implements Runnable{
     private long nextStatTime;
     private int fps, ups;   // frames per sec ; updates per sec
 
-    // finally a helpful video https://www.youtube.com/watch?v=LICU6zH8gVU
-    // watch the video again make comments
+   
+
     @Override
     public void run(){
 
@@ -19,13 +19,11 @@ public class GameLoop implements Runnable{
         long currentTime;
         long lastUpdate = System.currentTimeMillis();
 
-
-
-        //actual gameloop : 
+        // -- actual gameloop -- 
         while(running){
             currentTime = System.currentTimeMillis();
             double lastRenderTimeInSec = (currentTime - lastUpdate) /1000d; // calculates Gap bewtween initiated time and time until next Update
-            accumulator = lastRenderTimeInSec;   // displays lastRenderTimeInSec
+            accumulator += lastRenderTimeInSec;   // displays lastRenderTimeInSec
             lastUpdate = currentTime;   //prep for next loop 
 
             while (accumulator > updateRate){
@@ -42,8 +40,12 @@ public class GameLoop implements Runnable{
 
 
     private void printStats(){
-        if ( System.currentTimeMillis() > nextStatTime) {
+        if ( System.currentTimeMillis() >= nextStatTime) {
             System.out.println(String.format("FPS: %d, UPS:  %d", fps,ups));
+            fps = 0;
+            ups = 0;
+            nextStatTime = System.currentTimeMillis() + 1000; 
+
         }
     }
 

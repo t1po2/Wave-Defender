@@ -1,9 +1,9 @@
-module com.wavedefender {
+module wavedefender {
     requires javafx.controls;
     requires javafx.fxml;
     requires transitive javafx.graphics;
 
 
-    opens wavedefender to javafx.fxml;
-    exports wavedefender;
+    opens wavedefender.game to javafx.fxml;
+    exports wavedefender.game;
 }
