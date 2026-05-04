@@ -59,5 +59,8 @@ public class GameLoop implements Runnable{
         ups++;
 
     }
-
+    
+    public void stop(){
+        running = false;
+    }
 }
