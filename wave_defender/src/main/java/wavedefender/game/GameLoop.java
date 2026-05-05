@@ -1,5 +1,11 @@
 package wavedefender.game;
 // helpful video: https://www.youtube.com/watch?v=LICU6zH8gVU
+
+
+
+// -- Actual Start of Game Logic -- 
+
+
 public class GameLoop implements Runnable{
 
 
@@ -72,7 +78,6 @@ public class GameLoop implements Runnable{
     }
 
    
-    
     public void stop(){
         running = false;
     }

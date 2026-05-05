@@ -1,6 +1,9 @@
 package wavedefender.game;
 
 
+// -- this class Game initializes a Window --
+// for now 
+
 public class Game{
 
     private Display display;
@@ -9,7 +12,8 @@ public class Game{
 
     public Game(int width, int height){
 
-    display = new Display(width,height);
+    // -- Creates the Window Application -- 
+    display = new Display(width,height);        
     }
 
 
@@ -18,6 +22,9 @@ public class Game{
     }
 
     public void render(){
+
+        display.render(this);
+
 
     }
 
