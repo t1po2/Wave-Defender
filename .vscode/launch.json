@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launcher",
             "request": "launch",
+            "mainClass": "wavedefender.game.Launcher",
+            "projectName": "wave_defender"
+        },
+        {
+            "type": "java",
+            "name": "Launcher",
+            "request": "launch",
             "mainClass": "wavedefender/wavedefender.game.Launcher",
             "projectName": "wave_defender"
         },
@@ -21,7 +28,7 @@
             "type": "java",
             "name": "App",
             "request": "launch",
-            "mainClass": "com.wavedefender/wavedefender.App",
+            "mainClass": "com.wavedefender/wavedefender.game",
             "projectName": "wave_defender"
         },
         {

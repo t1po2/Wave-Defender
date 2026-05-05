@@ -4,7 +4,6 @@ package wavedefender.game;
 public class Game{
 
     private Display display;
-    public Object update;
 
 
 

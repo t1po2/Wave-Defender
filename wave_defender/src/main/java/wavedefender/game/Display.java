@@ -18,7 +18,6 @@ public class Display extends JFrame {
         canvas.setFocusable(false);
         add(canvas);
         pack();
-
         setLocationRelativeTo(null);
         setVisible(true);
     }
