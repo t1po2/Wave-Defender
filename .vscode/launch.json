@@ -6,9 +6,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestAWT",
+            "request": "launch",
+            "mainClass": "wavedefender.game.TestAWT",
+            "projectName": "wave_defender"
+        },
+        {
+            "type": "java",
             "name": "Launcher",
             "request": "launch",
             "mainClass": "wavedefender.game.Launcher",
+            "vmArgs": "-XstartOnFirstThread",
             "projectName": "wave_defender"
         },
         {
