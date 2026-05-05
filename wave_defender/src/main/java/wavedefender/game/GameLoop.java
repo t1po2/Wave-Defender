@@ -48,6 +48,8 @@ public class GameLoop implements Runnable{
             }
             render();
             printStats();
+            
+            
         }
     }
 

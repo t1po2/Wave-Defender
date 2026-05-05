@@ -2,6 +2,8 @@ package wavedefender.game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferStrategy;
 
 public class Display extends JFrame {
@@ -24,6 +26,7 @@ public class Display extends JFrame {
 
         setLocationRelativeTo(null);
         setVisible(true);
+        mouseTracker();
     }
    
     public void render(Game game){
@@ -35,9 +38,21 @@ public class Display extends JFrame {
 
       graphics.dispose();
       bufferStrategy.show();
-
-
-
     }
+
+
+    // simple mouse click tracker. using it to pinpoint waypoints for a mappath 
+
+    public void mouseTracker(){
+        canvas.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e){
+                int x = e.getX();
+                int y = e.getY();
+                System.out.println("waypoints.add(new Point(" + x + "," + y + "));");       // output for easy copy
+            }
+        });
+    }
+
 }
 
